@@ -23,6 +23,10 @@ npm run dev    # the login page has dev-only "Sign in as" buttons
 
 Tests: `npm test` (unit), `npm run test:e2e` (Playwright), `npm run check` (types), `npm run lint`.
 
+## Live
+
+https://strides.app.haddow.me (deploys from `main` with Cloudflare Workers Builds).
+
 ## Installing on a phone
 
 Open the app in Safari (iPhone) or Chrome (Android), sign in, then Share → Add to Home Screen.
