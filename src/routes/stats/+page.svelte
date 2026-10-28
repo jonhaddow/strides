@@ -46,8 +46,8 @@
 			<dd>{Math.round(data.total.metres / 1000)}</dd>
 		</div>
 		<div>
-			<dt>Climbed</dt>
-			<dd>{data.total.climb.toLocaleString('en-GB')} m</dd>
+			<dt>Climbed (m)</dt>
+			<dd>{data.total.climb.toLocaleString('en-GB')}</dd>
 		</div>
 		<div>
 			<dt>Hours</dt>
