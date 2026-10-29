@@ -36,7 +36,9 @@ test('says what’s wrong with a run and keeps what was typed', async ({ page })
 	await page.getByLabel('Time (min:sec)').fill('25:99');
 	await page.getByLabel('Road').check();
 	await page.getByRole('button', { name: 'Save run' }).click();
-	await expect(page.getByRole('alert')).toHaveText('Time should be minutes:seconds, like 26:39.');
+	await expect(page.getByRole('alert')).toHaveText(
+		'Time should be minutes:seconds, like 26:39 or 26.39.'
+	);
 	await expect(page.getByLabel('Route')).toHaveValue('Somewhere new');
 });
 

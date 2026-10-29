@@ -36,10 +36,14 @@ describe('durations', () => {
 		expect(parseDuration('51')).toBe(3060);
 		// A typo from the sheet.
 		expect(parseDuration('21.:32')).toBe(1292);
+		// Number pads have no colon.
+		expect(parseDuration('50.59')).toBe(3059);
+		expect(parseDuration('50,59')).toBe(3059);
+		expect(parseDuration('1.15.35')).toBe(4535);
 	});
 
 	it('refuses what isn’t a time', () => {
-		for (const bad of ['', '0', '12:75', 'abc', '1:2:3:4', '-5'])
+		for (const bad of ['', '0', '12:75', 'abc', '1:2:3:4', '-5', '26.5', '6.6', '50:5'])
 			expect(parseDuration(bad)).toBeNull();
 	});
 
