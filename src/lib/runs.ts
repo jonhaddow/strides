@@ -58,14 +58,17 @@ export const formatKm = (metres: number) => (metres / 1000).toFixed(2);
 
 /**
  * A time typed as "50:59" (minutes:seconds, minutes can pass 60), "1:15:35",
- * or plain minutes ("51"). Null if it isn't one.
+ * or plain minutes ("51"). Phone number pads have no colon, so "50.59",
+ * "50,59" and "50 59" work too; seconds take two digits so "26.5" isn't
+ * mistaken for 26:05. Null if it isn't one.
  */
 export function parseDuration(text: string): number | null {
 	const parts = text
 		.trim()
 		.replace(/\.(?=:)/g, '')
-		.split(':');
-	if (parts.length > 3 || parts.some((p) => !/^\d+$/.test(p))) return null;
+		.split(/[:.,\s]/);
+	if (parts.length > 3 || !/^\d+$/.test(parts[0]) || parts.slice(1).some((p) => !/^\d\d$/.test(p)))
+		return null;
 	const n = parts.map(Number);
 	if (n.slice(1).some((x) => x >= 60)) return null;
 	const seconds = n.reduce((total, x) => total * 60 + x, 0) * (parts.length === 1 ? 60 : 1);

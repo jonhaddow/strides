@@ -71,7 +71,7 @@
 		</label>
 		<label class="field">
 			Time (min:sec)
-			<input name="time" inputmode="numeric" required placeholder="26:39" bind:value={v.time} />
+			<input name="time" inputmode="decimal" required placeholder="26:39" bind:value={v.time} />
 		</label>
 	</div>
 
