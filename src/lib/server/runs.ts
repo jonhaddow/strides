@@ -88,7 +88,7 @@ export function parseRunForm(
 	const metres = parseKm(values.km);
 	if (metres === null) return fail('Distance should be in km, like 5.2.');
 	const seconds = parseDuration(values.time);
-	if (seconds === null) return fail('Time should be minutes:seconds, like 26:39 or 26.39.');
+	if (seconds === null) return fail('Time should be minutes.seconds, like 26.39.');
 	const climb = values.climb === '' ? 0 : Number(values.climb);
 	if (!Number.isInteger(climb) || climb < 0 || climb > 10_000)
 		return fail('Elevation gain should be whole metres, like 120.');

@@ -70,8 +70,8 @@
 			<input name="km" inputmode="decimal" required placeholder="5.00" bind:value={v.km} />
 		</label>
 		<label class="field">
-			Time (min:sec)
-			<input name="time" inputmode="decimal" required placeholder="26:39" bind:value={v.time} />
+			Time (min.sec)
+			<input name="time" inputmode="decimal" required placeholder="26.39" bind:value={v.time} />
 		</label>
 	</div>
 
