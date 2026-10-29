@@ -65,6 +65,7 @@ export const formatKm = (metres: number) => (metres / 1000).toFixed(2);
 export function parseDuration(text: string): number | null {
 	const parts = text
 		.trim()
+		// "21.:32", a typo from the sheet.
 		.replace(/\.(?=:)/g, '')
 		.split(/[:.,\s]/);
 	if (parts.length > 3 || !/^\d+$/.test(parts[0]) || parts.slice(1).some((p) => !/^\d\d$/.test(p)))
