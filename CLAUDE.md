@@ -8,6 +8,7 @@ Bobby's running log, replacing the "Running Tracksheet" Google Sheet. A PWA at h
 - Distances are integer metres and times integer seconds.
 - Bobby runs all over the world, so days are the phone's local date (`todayHere`), not UK days.
 - Picking a known route on the form fills in its last distance, climb and surface.
+- Secrets: `GOOGLE_CLIENT_SECRET`.
 
 ## Review focus
 
