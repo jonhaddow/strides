@@ -13,3 +13,5 @@ Bobby's running log, replacing the "Running Tracksheet" Google Sheet. A PWA at h
 ## Review focus
 
 The score formula matching the sheet, time parsing (`50:59`, `155:35`, `1:15:35`), and phone-width layout of the run form.
+
+- Pages scroll in the layout's `.scroll`, not the window, with the tab bar over it (so iOS can't strand it mid-screen). SvelteKit's scroll handling doesn't apply: the layout keeps scroll positions itself, and tapping the iPhone status bar no longer jumps to the top (tapping the open tab does).
